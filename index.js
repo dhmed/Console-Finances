@@ -111,3 +111,17 @@ for (var i = 0; i < finances.length - 1; i++) {
 }
 averageChange = totalChange / numChanges;
 console.log("Average Change: " + averageChange.toFixed(2));
+
+//The greatest increase in Profit/Losses (date and amount) over the entire period.
+var totalGreatInc = 0;
+var maxIndex = 0;
+
+for (var i = 0; i < finances.length - 1; i++) {
+  var difference = finances[i + 1][1] - finances[i][1];
+  if (difference > totalGreatInc) {
+    totalGreatInc = difference;
+    maxIndex = i + 1;
+  }
+}
+var monthGreatInc = finances[maxIndex][0];
+console.log("Greatest Increase in Profits/Losses: " + monthGreatInc + " ($"+totalGreatInc+")");
