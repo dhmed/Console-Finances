@@ -125,3 +125,17 @@ for (var i = 0; i < finances.length - 1; i++) {
 }
 var monthGreatInc = finances[maxIndex][0];
 console.log("Greatest Increase in Profits/Losses: " + monthGreatInc + " ($"+totalGreatInc+")");
+
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
+var totalGreatDec = 0;
+var maxIndexDec = 0;
+
+for (var i = 0; i < finances.length - 1; i++) {
+  var differenceDec = finances[i + 1][1] - finances[i][1];
+  if (differenceDec < totalGreatDec) {
+    totalGreatDec = differenceDec;
+    maxIndexDec = i + 1;
+  }
+}
+var monthGreatDec = finances[maxIndexDec][0];
+console.log("Greatest Increase in Profits/Losses: " + monthGreatDec + " ($"+totalGreatDec+")");
