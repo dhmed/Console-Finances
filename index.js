@@ -99,3 +99,15 @@ console.log("Total Months: " + totalMonths);
 var sumColRight = (arr, col) => arr.reduce((acc, row) => acc + row[col], 0);
 console.log("Total: " + "$" + sumColRight(finances, 1));
 
+//The average of the changes in Profit/Losses over the entire period.
+var totalChange = 0;
+var numChanges = 0;
+var averageChange = 0;
+
+for (var i = 0; i < finances.length - 1; i++) {
+  var change = finances[i + 1][1] - finances[i][1];
+  totalChange += change;
+  numChanges++;
+}
+averageChange = totalChange / numChanges;
+console.log("Average Change: " + averageChange.toFixed(2));
