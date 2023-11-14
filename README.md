@@ -5,8 +5,6 @@ Code for analysing the financial records of a company.
 
 This page allows to check the total number of months, total collected, average change, greatest increase and greatest decrease.
 
-<img src="./images/page1.png">
-
 ## Installation
 
 N/A
